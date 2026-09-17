@@ -1,0 +1,251 @@
+/* Optional, framework-neutral starter. Adapt to the host project's token system. */
+
+:root {
+  color-scheme: dark;
+
+  --pdui-page: #121212;
+  --pdui-stage: #171717;
+  --pdui-stage-deep: #131313;
+  --pdui-card: #181818;
+  --pdui-card-hover: #1c1c1c;
+  --pdui-panel: #1b1b1b;
+  --pdui-selected: #2a2a2a;
+
+  --pdui-text: #fbfbfb;
+  --pdui-text-secondary: #b1b1b1;
+  --pdui-text-muted: #979797;
+  --pdui-text-faint: #767676;
+  --pdui-rule: rgb(255 255 255 / 5%);
+  --pdui-ring: rgb(255 255 255 / 7%);
+
+  --pdui-accent: #0071fc;
+  --pdui-accent-hover: #1d82ff;
+  --pdui-info: #55cfff;
+
+  --pdui-r-1: 6px;
+  --pdui-r-2: 9px;
+  --pdui-r-3: 12px;
+  --pdui-r-4: 16px;
+  --pdui-r-5: 24px;
+  --pdui-r-pill: 999px;
+
+  --pdui-s-1: 4px;
+  --pdui-s-2: 8px;
+  --pdui-s-3: 12px;
+  --pdui-s-4: 16px;
+  --pdui-s-5: 24px;
+  --pdui-s-6: 32px;
+  --pdui-s-7: 40px;
+  --pdui-section: 96px;
+
+  --pdui-shell: 1240px;
+  --pdui-content: 1008px;
+  --pdui-prose: 686px;
+
+  --pdui-shadow-float:
+    0 18px 50px rgb(0 0 0 / 36%),
+    0 2px 8px rgb(0 0 0 / 30%);
+  --pdui-shadow-selected:
+    0 1px 0 rgb(255 255 255 / 7%) inset,
+    0 8px 20px rgb(0 0 0 / 24%);
+
+  --pdui-ease-smooth: cubic-bezier(.22, 1, .36, 1);
+  --pdui-ease-bounce: cubic-bezier(.34, 1.36, .64, 1);
+  --pdui-fast: 150ms;
+  --pdui-medium: 250ms;
+}
+
+[data-ui-theme="light"] {
+  color-scheme: light;
+  --pdui-page: #fdfdfd;
+  --pdui-stage: #f9f9f9;
+  --pdui-stage-deep: #f5f5f5;
+  --pdui-card: #fff;
+  --pdui-card-hover: #fafafa;
+  --pdui-panel: #fff;
+  --pdui-selected: #ededed;
+  --pdui-text: #0d0d0d;
+  --pdui-text-secondary: #555;
+  --pdui-text-muted: #6c6c6c;
+  --pdui-text-faint: #767676;
+  --pdui-rule: rgb(0 0 0 / 6%);
+  --pdui-ring: rgb(0 0 0 / 8%);
+}
+
+.pdui-shell {
+  width: min(calc(100% - 48px), var(--pdui-shell));
+  margin-inline: auto;
+}
+
+.pdui-content {
+  width: min(100%, var(--pdui-content));
+  margin-inline: auto;
+}
+
+.pdui-card {
+  position: relative;
+  overflow: clip;
+  border: 1px solid var(--pdui-ring);
+  border-radius: var(--pdui-r-5);
+  background: var(--pdui-card);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 4%) inset;
+  color: var(--pdui-text);
+  transition:
+    background-color var(--pdui-fast) ease,
+    border-color var(--pdui-fast) ease,
+    transform var(--pdui-fast) var(--pdui-ease-smooth);
+}
+
+.pdui-card__stage {
+  margin: var(--pdui-s-3);
+  border-radius: var(--pdui-r-4);
+  background: var(--pdui-stage-deep);
+}
+
+.pdui-panel {
+  border: 1px solid var(--pdui-ring);
+  border-radius: var(--pdui-r-4);
+  padding: var(--pdui-s-4);
+  background: var(--pdui-panel);
+  box-shadow: var(--pdui-shadow-float);
+}
+
+.pdui-button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pdui-s-2);
+  border: 0;
+  border-radius: var(--pdui-r-pill);
+  padding-inline: var(--pdui-s-4);
+  background: rgb(255 255 255 / 8%);
+  color: var(--pdui-text);
+  font: 500 13px/1 system-ui, sans-serif;
+  cursor: pointer;
+  transition:
+    background-color var(--pdui-fast) ease,
+    color var(--pdui-fast) ease,
+    transform 80ms ease;
+}
+
+.pdui-button--primary {
+  background: var(--pdui-accent);
+  color: #fff;
+}
+
+.pdui-button:active:not(:disabled) {
+  transform: scale(.97);
+}
+
+.pdui-button:focus-visible,
+.pdui-icon-button:focus-visible,
+.pdui-segmented__option:focus-visible {
+  outline: 2px solid var(--pdui-info);
+  outline-offset: 3px;
+}
+
+.pdui-icon-button {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--pdui-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--pdui-fast) ease,
+    color var(--pdui-fast) ease;
+}
+
+.pdui-segmented {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: var(--pdui-r-pill);
+  padding: 3px;
+  background: rgb(255 255 255 / 5%);
+}
+
+.pdui-segmented__option {
+  min-height: 30px;
+  border: 0;
+  border-radius: var(--pdui-r-pill);
+  padding-inline: var(--pdui-s-3);
+  background: transparent;
+  color: var(--pdui-text-muted);
+  font: 500 13px/1 system-ui, sans-serif;
+  cursor: pointer;
+  transition:
+    background-color var(--pdui-fast) ease,
+    color var(--pdui-fast) ease,
+    box-shadow var(--pdui-medium) var(--pdui-ease-smooth);
+}
+
+.pdui-segmented__option[aria-pressed="true"],
+.pdui-segmented__option[aria-selected="true"] {
+  background: var(--pdui-selected);
+  box-shadow: var(--pdui-shadow-selected);
+  color: var(--pdui-text);
+}
+
+.pdui-code {
+  position: relative;
+  overflow: auto;
+  border: 1px solid var(--pdui-rule);
+  border-radius: var(--pdui-r-4);
+  padding: 24px 26px;
+  background: var(--pdui-stage);
+  color: var(--pdui-text-secondary);
+  font: 400 12.5px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.pdui-divider-list > * + * {
+  border-block-start: 1px solid var(--pdui-rule);
+}
+
+.pdui-divider-list > * {
+  padding-block: var(--pdui-s-4);
+}
+
+@media (hover: hover) {
+  .pdui-card:hover {
+    background: var(--pdui-card-hover);
+  }
+
+  .pdui-button:hover:not(:disabled),
+  .pdui-icon-button:hover:not(:disabled) {
+    background: rgb(255 255 255 / 11%);
+    color: var(--pdui-text);
+  }
+
+  .pdui-button--primary:hover:not(:disabled) {
+    background: var(--pdui-accent-hover);
+  }
+}
+
+@media (max-width: 740px) {
+  :root {
+    --pdui-section: 60px;
+  }
+
+  .pdui-shell {
+    width: min(calc(100% - 24px), var(--pdui-shell));
+  }
+
+  .pdui-button {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
