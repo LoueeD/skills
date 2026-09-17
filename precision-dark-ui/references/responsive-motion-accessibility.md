@@ -27,10 +27,20 @@ Use logical properties (`padding-inline`, `margin-block`) where practical. Check
 
 ## Motion grammar
 
-Motion is brief and material:
+Choose motion from interaction intent and frequency before choosing a duration:
+
+- repeated hover, navigation scanning, and expert keyboard actions: instant by default;
+- pressed feedback: around 80ms;
+- selected indicators and simple state changes: 150–250ms;
+- panels and spatial transitions: 200–350ms;
+- rare explanatory or narrative changes: 350–500ms;
+- exits: usually faster than entrances.
+
+This produces a brief, material timing scale:
 
 - micro response: 80ms;
-- quick hover/state change: 150ms;
+- direct hover response: 0ms unless continuity materially helps;
+- simple state change: 150ms;
 - fast panel or indicator: 250ms;
 - medium reveal: 350ms;
 - slow narrative reveal: 400–500ms;
@@ -47,7 +57,13 @@ Use small distances—typically 4, 6, 8, or 12px—and scale changes around `.96
 
 Animate only `opacity`, `transform`, and narrowly scoped color/shadow properties when possible. Never use `transition: all`. Place hover styles behind `@media (hover: hover)`.
 
+Delay the first tooltip by roughly 400–700ms. Once the reader has demonstrated tooltip intent, open adjacent tooltips immediately until they leave the control group. Do not animate high-frequency keyboard navigation or queue transitions that make expert use feel delayed.
+
 Use bounce easing sparingly for a small control or selected indicator. It should never make the whole page feel spring-loaded.
+
+Keep optional interface sound muted or disabled by default. Require an explicit control, remember the preference, and never use sound as the only feedback. If audio permission is delayed, do not replay a stale queue of interaction sounds when permission eventually arrives.
+
+When switching themes, temporarily suppress decorative transitions, update the document canvas and supported `theme-color` metadata together, then restore motion on the next frame.
 
 Honor reduced motion:
 
@@ -83,11 +99,14 @@ Keep selected and hover distinguishable. A selected row may use an 8% white fill
 - Use real `button`, `a`, `input`, `select`, `textarea`, and heading elements.
 - A navigation action uses a link; an in-place action uses a button.
 - Every icon-only action has an accessible name and a visible tooltip where useful.
+- Mobile controls have at least a 44×44px target, which may be larger than their visible treatment.
 - Focus is clearly visible and not clipped by rounded overflow containers.
 - Do not communicate status or selection by color alone.
+- Model one-of-many choices as tabs or radio groups, or label and group pressed buttons correctly.
 - Body copy and muted labels meet contrast requirements against their actual surface.
 - Form labels remain visible; errors are connected to their field and announced appropriately.
 - Dynamic status uses `role="status"` or an appropriate live region without stealing focus.
+- Copy confirmation and comparable transient utility feedback are announced through a polite status region.
 - Drawers, popovers, and modals manage focus, Escape, and focus restoration.
 - Decorative imagery has empty alt text; meaningful imagery has specific alt text.
 - Text regions can grow without clipping; avoid fixed heights around content.
@@ -96,6 +115,7 @@ Keep selected and hover distinguishable. A selected row may use an 8% white fill
 ## Optical quality checklist
 
 - Icons are visually centered, not merely mathematically centered.
+- Blur or squint at icon rows to compare apparent mass; apply per-icon 1px corrections when necessary.
 - One-pixel rules align to the pixel grid.
 - Nested corners are concentric.
 - Images have a subtle inset outline when their edge could disappear into the surface.
@@ -116,3 +136,6 @@ Keep selected and hover distinguishable. A selected row may use an 8% white fill
 - Emoji used as product icons.
 - Identical bubbles for every conversational role.
 - Tooltips that contain essential information unavailable elsewhere.
+- Animated hover or keyboard scanning that makes repeated actions lag behind intent.
+- A theme switch that leaves the root canvas, overscroll edge, or browser chrome in the previous theme.
+- Optional sound enabled by default or used as the sole confirmation.

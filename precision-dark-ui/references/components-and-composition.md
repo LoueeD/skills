@@ -14,6 +14,12 @@ Desktop navigation is compact and pill-oriented:
 
 On mobile, collapse supporting brand text if necessary and move navigation into a blurred full-screen layer. Use 20px links at roughly 24px vertical intervals and a 44px primary action. Keep the header itself visually quiet.
 
+### Utility header, command search, and concept navigation
+
+For compact educational or reference surfaces, a fixed utility header may replace the product-navigation pattern. Keep source, search, theme, and menu controls visually subordinate to the lesson. A faint desktop rail may sit outside the reading measure; collapse it into an accessible mobile sheet instead of compressing it beside the article.
+
+Use a command palette for fast concept lookup when the content set warrants it. Give it a clear search field, keyboard navigation, a meaningful empty state, and full modal focus behavior. See [interactive-documentation.md](interactive-documentation.md) for the complete archetype and measurements.
+
 ## Marketing cards and grids
 
 The home-style grid uses equal editorial cards:
@@ -22,7 +28,7 @@ The home-style grid uses equal editorial cards:
 - three columns with 24px gaps;
 - card proportion near 320×344px;
 - 24px outer radius;
-- 16px inner stage radius with a 12px inset;
+- about 12px inner stage radius with a 12px inset and 1px intervening border;
 - 16px metadata inset near card edges.
 
 At medium widths, use two columns and cap the grid near 664px. Below roughly 740px, use one column with 16px gaps. Do not squeeze three cards into narrow columns.
@@ -43,6 +49,8 @@ A strong detail layout uses:
 At tablet widths, transform the rail into a horizontal, scrollable strip. Do not leave a cramped mini-sidebar.
 
 Detail headers use a 46px product icon with a 12px radius, a 36px title, and a 16px subtitle. Keep about 12px between title and description and roughly 21px between major header groups.
+
+Do not apply this 200px product rail to every documentation page. For a compact concept guide with live lessons, use the narrower article system in [interactive-documentation.md](interactive-documentation.md).
 
 ## Tabs versus segmented controls
 
@@ -65,6 +73,8 @@ Use plain text tabs for major identity choices such as Solo versus Team. Separat
 - Copy/theme/overflow action: square ghost button, 32–36px, 8–10px radius or circular in the top bar.
 
 Utility actions start transparent and gain a quiet fill on hover/focus. Primary actions may use blue. Avoid multiple competing blue actions in one region.
+
+A 32–36px desktop utility may retain that visual size while an invisible pseudo-element or wrapper expands its touch target to at least 44px. Keep adjacent targets separated so the expanded areas do not overlap.
 
 ## Interactive playground
 
@@ -94,6 +104,10 @@ Control panel defaults:
 
 Active controls should look slightly lifted through neutral material and a delicate ring/shadow. Avoid neon fills.
 
+## Comparison demonstrations
+
+Use equal-width wrong/right or before/after examples to teach one precise distinction. Keep the module near 512px, use a 12px gap when compact and up to 40px when spacious, and place captions immediately below the examples. Pair status color with a label and icon. The demonstration canvas may remain open; do not wrap both sides in extra cards unless they require independent material or clipping.
+
 ## Sliders, swatches, and inputs
 
 - Compact choice pill: 32px high, 12px inline padding, 36px radius, 4px gap.
@@ -102,6 +116,8 @@ Active controls should look slightly lifted through neutral material and a delic
 - Text input/composer: 39–44px minimum, 12px radius, 12px inline padding.
 
 Use native inputs under the styled layer where possible. Labels remain visible; placeholders are examples, not labels.
+
+Display a slider's current value when precision matters. Keep the visible track compact, but enlarge the thumb or invisible interaction area for touch and pointer acquisition.
 
 ## Code blocks
 

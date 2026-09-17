@@ -1,6 +1,6 @@
 ---
 name: precision-dark-ui
-description: "Design or refine developer-product interfaces in a precise dark-material visual language: quiet near-black surfaces, stage-first cards, pill state controls, measured radii, restrained blue accents, and subtle micro-motion. Use for landing pages, library documentation, AI playgrounds, developer tools, pricing, or design-system work when this direction is requested. Do not use when another established design system should govern."
+description: "Design or refine developer-product interfaces in a precise dark-material visual language: quiet near-black surfaces, stage-first cards, pill state controls, measured radii, restrained blue accents, and subtle micro-motion. Use for landing pages, library documentation, interactive concept guides, AI playgrounds, developer tools, pricing, or design-system work when this direction is requested. Do not use when another established design system should govern."
 ---
 
 # Precision Dark UI
@@ -10,11 +10,12 @@ Create calm, precise interfaces for technical products. Preserve the project's i
 ## Start here
 
 1. Inspect the existing app, framework, tokens, and reusable components before editing.
-2. Identify the page archetype: marketing grid, product detail/playground, documentation, feature landing page, pricing, or mixed.
+2. Identify the page archetype: marketing grid, product detail/playground, documentation, interactive concept guide, feature landing page, pricing, or mixed.
 3. Read [references/visual-language.md](references/visual-language.md) for the core system.
 4. Read [references/components-and-composition.md](references/components-and-composition.md) for the relevant archetype and component roles.
-5. Before finishing, apply [references/responsive-motion-accessibility.md](references/responsive-motion-accessibility.md).
-6. Use [assets/theme-tokens.css](assets/theme-tokens.css) only as an optional starter. Adapt its semantic tokens to the project's existing system rather than layering on duplicate globals.
+5. For an educational, reference, or concept-driven surface, read [references/interactive-documentation.md](references/interactive-documentation.md).
+6. Before finishing, apply [references/responsive-motion-accessibility.md](references/responsive-motion-accessibility.md).
+7. Use [assets/theme-tokens.css](assets/theme-tokens.css) only as an optional starter. Adapt its semantic tokens to the project's existing system rather than layering on duplicate globals.
 
 ## Working method
 
@@ -36,6 +37,7 @@ Do not begin with glows, gradients, or generic cards. The style comes primarily 
 - Favor an 8px rhythm with optical exceptions at 6, 12, 18, and 24px.
 - Keep group gaps at least twice their internal label-to-control gaps.
 - Use concentric radii: a nested surface must look related to its parent.
+- Choose motion by interaction frequency and intent before choosing a duration.
 - Reserve blue for decisive progression, conversion, or numbered guidance—not routine selection.
 - Let content visuals bleed to card edges when they are part of the card's story.
 - Use hairline rows, open columns, or plain text when a card would add no semantic boundary.
@@ -45,6 +47,7 @@ Do not begin with glows, gradients, or generic cards. The style comes primarily 
 - Marketing pages: centered hero, restrained copy width, editorial card grid, quiet footer.
 - Product details: left-aligned title, sticky or horizontally scrollable navigation, stage first, controls second, implementation code last.
 - Interactive playgrounds: dominant preview with a narrower control rail; stack cleanly on smaller screens.
+- Interactive guides: concise principle, live demonstration, explanation, implementation, sources, then adjacent navigation.
 - Feature pages: show the product through real framed visuals, then open feature columns, then line-separated FAQ rows.
 - Pricing: keep plan identity, billing period, price, benefits, and CTA as separate visual layers.
 
@@ -64,7 +67,7 @@ If the page merely looks “dark and rounded,” the skill has not been applied 
 ## Non-negotiable boundaries
 
 - Do not recreate a reference product's branding or claim affiliation.
-- Do not copy its logo, marketing copy, testimonials, screenshots, videos, or Saans font files.
+- Do not copy its logo, marketing copy, testimonials, screenshots, videos, or proprietary font files.
 - Do not force this style over an established product design system without explicit direction.
 - Do not use `transition: all`, color-only state communication, inaccessible custom controls, or fixed-height text containers.
 - Do not turn every section into a rounded card or every active state into a blue pill.

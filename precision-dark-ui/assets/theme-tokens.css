@@ -41,7 +41,15 @@
   --pdui-shell: 1240px;
   --pdui-content: 1008px;
   --pdui-prose: 686px;
+  --pdui-article: 640px;
 
+  --pdui-shadow-card:
+    inset 0 1px 0 rgb(255 255 255 / 3%),
+    inset 0 0 0 1px rgb(255 255 255 / 3%),
+    0 0 0 1px rgb(0 0 0 / 10%),
+    0 2px 2px rgb(0 0 0 / 10%),
+    0 4px 4px rgb(0 0 0 / 8%),
+    0 8px 8px rgb(0 0 0 / 6%);
   --pdui-shadow-float:
     0 18px 50px rgb(0 0 0 / 36%),
     0 2px 8px rgb(0 0 0 / 30%);
@@ -51,6 +59,7 @@
 
   --pdui-ease-smooth: cubic-bezier(.22, 1, .36, 1);
   --pdui-ease-bounce: cubic-bezier(.34, 1.36, .64, 1);
+  --pdui-hover: 0ms;
   --pdui-fast: 150ms;
   --pdui-medium: 250ms;
 }
@@ -70,6 +79,16 @@
   --pdui-text-faint: #767676;
   --pdui-rule: rgb(0 0 0 / 6%);
   --pdui-ring: rgb(0 0 0 / 8%);
+  --pdui-shadow-card:
+    0 0 0 1px rgb(0 0 0 / 6%),
+    0 1px 2px -1px rgb(0 0 0 / 10%),
+    0 2px 4px rgb(0 0 0 / 6%);
+}
+
+html,
+body {
+  background: var(--pdui-page);
+  color: var(--pdui-text);
 }
 
 .pdui-shell {
@@ -88,17 +107,17 @@
   border: 1px solid var(--pdui-ring);
   border-radius: var(--pdui-r-5);
   background: var(--pdui-card);
-  box-shadow: 0 1px 0 rgb(255 255 255 / 4%) inset;
+  box-shadow: var(--pdui-shadow-card);
   color: var(--pdui-text);
   transition:
-    background-color var(--pdui-fast) ease,
-    border-color var(--pdui-fast) ease,
+    background-color var(--pdui-hover) ease,
+    border-color var(--pdui-hover) ease,
     transform var(--pdui-fast) var(--pdui-ease-smooth);
 }
 
 .pdui-card__stage {
   margin: var(--pdui-s-3);
-  border-radius: var(--pdui-r-4);
+  border-radius: var(--pdui-r-3);
   background: var(--pdui-stage-deep);
 }
 
@@ -124,8 +143,8 @@
   font: 500 13px/1 system-ui, sans-serif;
   cursor: pointer;
   transition:
-    background-color var(--pdui-fast) ease,
-    color var(--pdui-fast) ease,
+    background-color var(--pdui-hover) ease,
+    color var(--pdui-hover) ease,
     transform 80ms ease;
 }
 
@@ -156,8 +175,13 @@
   color: var(--pdui-text-secondary);
   cursor: pointer;
   transition:
-    background-color var(--pdui-fast) ease,
-    color var(--pdui-fast) ease;
+    background-color var(--pdui-hover) ease,
+    color var(--pdui-hover) ease,
+    transform 80ms ease;
+}
+
+.pdui-icon-button:active:not(:disabled) {
+  transform: scale(.96);
 }
 
 .pdui-segmented {
@@ -180,8 +204,8 @@
   font: 500 13px/1 system-ui, sans-serif;
   cursor: pointer;
   transition:
-    background-color var(--pdui-fast) ease,
-    color var(--pdui-fast) ease,
+    background-color var(--pdui-hover) ease,
+    color var(--pdui-hover) ease,
     box-shadow var(--pdui-medium) var(--pdui-ease-smooth);
 }
 
@@ -201,6 +225,45 @@
   background: var(--pdui-stage);
   color: var(--pdui-text-secondary);
   font: 400 12.5px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.pdui-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.pdui-image-outline {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%);
+}
+
+[data-ui-theme="light"] .pdui-image-outline {
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%);
+}
+
+.pdui-article {
+  width: min(calc(100% - 56px), var(--pdui-article));
+  margin-inline: auto;
+  padding-block: 112px 96px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.pdui-demo {
+  min-height: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-block: 32px;
+  padding: 40px 24px;
+}
+
+.pdui-compare {
+  width: min(100%, 512px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-inline: auto;
 }
 
 .pdui-divider-list > * + * {
@@ -238,6 +301,20 @@
 
   .pdui-button {
     min-height: 44px;
+  }
+
+  .pdui-icon-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pdui-article {
+    width: min(calc(100% - 32px), var(--pdui-article));
+    padding-block: 72px 64px;
+  }
+
+  .pdui-compare {
+    gap: 12px;
   }
 }
 

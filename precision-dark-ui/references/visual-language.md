@@ -36,6 +36,18 @@ Separate adjacent dark surfaces with one or more of:
 
 Avoid high-contrast borders. The result should be legible at a glance but quiet when viewed peripherally.
 
+## Theme and document integrity
+
+Treat the browser canvas as part of the interface:
+
+- apply the active page-background token to both `html` and the application surface;
+- keep supported browser `theme-color` metadata synchronized with the active theme;
+- use the same semantic roles in light and dark themes rather than inventing a separate component language;
+- suppress decorative transitions while the theme changes so the page does not crossfade through mismatched values;
+- verify overscroll, loading, and navigation edges in both themes.
+
+Prefer semantic color roles over raw component-specific colors. OKLCH is useful when tuning perceived lightness across themes, but do not convert a stable project palette merely for novelty.
+
 ## Color
 
 - Primary text: near-white (`#fbfbfb` or `#ffffff`).
@@ -70,6 +82,17 @@ Recommended roles:
 
 Keep long-form prose around 60–75 characters per line. Use tabular numerals for prices, timers, or changing values.
 
+### Optical typography and icon alignment
+
+- Use proportional figures in prose and tabular figures for timers, prices, scores, counters, and changing metrics.
+- Right-align numeric columns so values with different digit counts share an edge.
+- Confirm that the selected font actually supports the `tnum` feature before relying on `font-variant-numeric: tabular-nums`.
+- Keep `font-optical-sizing: auto` for variable fonts that provide optical sizes.
+- Judge icons by visual weight, not their bounding boxes. Blur or squint at the icon to reveal where its mass actually sits.
+- Correct directional icons individually—often by only 1px—and record the correction with the icon rather than applying a global transform.
+- Reduce padding slightly on the icon side of a text button when the icon's internal whitespace makes equal mathematical padding look uneven.
+- For editorial quotations, use hanging punctuation where supported or a carefully tested negative text indent.
+
 ## Spacing rhythm
 
 Think in nested levels:
@@ -96,7 +119,13 @@ The outer relationship must feel looser than the inner one. If every gap is 16px
 - Inline code: 6px.
 - Segmented controls and compact CTAs: 26–48px or fully pill-shaped.
 
-For concentric geometry, reduce an inner radius by approximately the inset distance. Example: a 24px card with a 12px inset usually wants an inner radius around 12–16px, not another 24px.
+For concentric geometry, start with:
+
+```text
+inner radius = max(0, outer radius - inset)
+```
+
+The inset is the distance between the two visible edges. Include parent padding and any border width that lies between them. Example: a 28px outer radius with a 12px inset wants a 16px inner radius. Tune by eye when the inset changes around the component, the inner element does not reach the corner, or the surfaces use different corner shapes.
 
 ## Container geometry
 
@@ -119,3 +148,22 @@ Cards should not look like luminous glass. A useful dark card treatment is:
 - hover value shift of only a few percentage points.
 
 Add a real soft shadow only to dropdowns, popovers, active sliding indicators, or floating tool panels. Elevation communicates layer, not decoration.
+
+For a dark bounded surface, build depth from several quiet layers rather than one dramatic blur:
+
+1. a faint inset highlight along the top edge;
+2. a low-opacity inset ring around the surface;
+3. a dark 1px outer separation line;
+4. progressively softer 2px, 4px, and 8px shadows at low opacity.
+
+In light mode, a 1px neutral ring plus restrained 1–4px shadows is usually sufficient. Preserve the same apparent elevation across themes even though the recipes differ.
+
+## Image-edge treatment
+
+When an image, avatar, or screenshot can disappear into its surrounding surface, paint a line over its edge rather than adding a layout-affecting border:
+
+- use a 1px inset shadow or an outline with a negative offset;
+- begin around black 10% in light mode and white 10% in dark mode;
+- tune roughly within 5–20%; below that the edge may disappear, above that it reads as an intentional frame;
+- follow the image's radius exactly;
+- keep the line decorative and non-interactive.
