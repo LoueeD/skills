@@ -2,9 +2,9 @@
 
 Use components according to their information role. Similar-looking controls are not interchangeable.
 
-## Navigation
+## Product and marketing navigation
 
-Desktop navigation is compact and pill-oriented:
+Use this compact pill-oriented pattern only when a product or marketing shell calls for it:
 
 - shell padding: about 16px vertically and 24px horizontally;
 - brand-to-nav gap: about 34px;
@@ -12,11 +12,13 @@ Desktop navigation is compact and pill-oriented:
 - utility icon: 36×36px, circular or pill-like;
 - right-side action gap: about 8px.
 
-On mobile, collapse supporting brand text if necessary and move navigation into a blurred full-screen layer. Use 20px links at roughly 24px vertical intervals and a 44px primary action. Keep the header itself visually quiet.
+On mobile, collapse supporting brand text if necessary and move navigation into a clear menu or sheet. Blur is optional, not a default. Use 20px links at roughly 24px vertical intervals and a 44px primary action. Keep the header itself visually quiet.
+
+Do not apply product navigation to a standalone internal document. Never show a top destination nav and a side or horizontal destination nav for the same links in one viewport.
 
 ### Utility header, command search, and concept navigation
 
-For compact educational or reference surfaces, a fixed utility header may replace the product-navigation pattern. Keep source, search, theme, and menu controls visually subordinate to the lesson. A faint desktop rail may sit outside the reading measure; collapse it into an accessible mobile sheet instead of compressing it beside the article.
+For compact educational or reference surfaces, a fixed utility header may replace the product-navigation pattern. Keep source, search, theme, and menu controls visually subordinate to the lesson. A faint desktop rail may sit outside the reading measure; collapse it into an accessible mobile sheet instead of compressing it beside the article. Choose the header or the rail as the destination model; do not duplicate the same links in both.
 
 Use a command palette for fast concept lookup when the content set warrants it. Give it a clear search field, keyboard navigation, a meaningful empty state, and full modal focus behavior. See [interactive-documentation.md](interactive-documentation.md) for the complete archetype and measurements.
 
@@ -34,6 +36,10 @@ The home-style grid uses equal editorial cards:
 At medium widths, use two columns and cap the grid near 664px. Below roughly 740px, use one column with 16px gaps. Do not squeeze three cards into narrow columns.
 
 Use cards for bounded stories, demos, testimonials, and pricing. Do not place ordinary feature bullets or FAQ entries in cards by default.
+
+## Internal playbooks and operating guides
+
+These are retrieval surfaces, not landing pages. Use a modest title, one contents model, an open operational sequence, and bounded surfaces only for tools, examples, code, or templates. When repeated steps share fields, align them as rows, a timeline, or a matrix instead of cloning a card or two-panel block. Read [internal-playbooks.md](internal-playbooks.md) for the complete archetype.
 
 ## Product detail and documentation
 
@@ -74,7 +80,7 @@ Use plain text tabs for major identity choices such as Solo versus Team. Separat
 
 Utility actions start transparent and gain a quiet fill on hover/focus. Primary actions may use blue. Avoid multiple competing blue actions in one region.
 
-A 32–36px desktop utility may retain that visual size while an invisible pseudo-element or wrapper expands its touch target to at least 44px. Keep adjacent targets separated so the expanded areas do not overlap.
+A 32–36px desktop utility may retain that visual size while an invisible pseudo-element or wrapper expands its interaction target to at least 44px. Keep adjacent targets separated so the expanded areas do not overlap.
 
 ## Interactive playground
 
@@ -176,6 +182,8 @@ For a three-step process:
 - product example area about 220px high, bleeding to the bottom and sides of the card.
 
 Collapse to two columns, allowing an odd final card to span when compositionally helpful, then to one column below phone width. Reduce padding to 24px.
+
+Do not use instruction cards for a long operational sequence or merely because the content has numbered steps. Beyond three steps, first test an open sequence, timeline, table, or grouped outline.
 
 ## Pricing and testimonials
 

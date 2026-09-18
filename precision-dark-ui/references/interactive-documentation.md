@@ -1,6 +1,6 @@
 # Interactive documentation
 
-Use this archetype for compact educational sites where the reader should understand a principle by manipulating it. It is not a replacement for broad API documentation or a marketing page.
+Use this archetype for compact educational sites where the reader should understand a principle by manipulating it. It is not a replacement for broad API documentation, an operational playbook, or a marketing page.
 
 ## Page sequence
 
@@ -58,16 +58,16 @@ Unavailable concepts must look and behave disabled. Prefer hiding them behind an
 
 ## Utility header and navigation
 
-A fixed utility header can stay quiet while the article scrolls:
+A fixed utility header can stay quiet while the article scrolls. Use it only when those utilities matter:
 
 - use roughly 32px inline and 26px block placement on desktop;
 - keep theme, search, source, and menu actions as ghost icon buttons;
 - give every icon action a 44px target on touch screens, even if the visible glyph or circle is smaller;
 - open search with Command/Ctrl+K when that shortcut is not already claimed.
 
-For a small concept set, a faded desktop rail can sit outside the article measure. A width near 224px is usually enough. On mobile, use an inset sheet—about 12px from the viewport edge and up to 256px wide—with a generous radius only if that shape belongs to the surrounding system.
+For a small concept set, a faded desktop rail can sit outside the article measure. A width near 224px is usually enough. Choose either the rail or header links for concept destinations. On mobile, use an inset sheet—about 12px from the viewport edge and up to 256px wide—with a generous radius only if that shape belongs to the surrounding system.
 
-A command palette can use a maximum width around 448px, at least 32px viewport clearance, a 48px search row, and a scrollable result list around 288px high. Manage focus, Escape, and focus restoration like a modal dialog.
+A command palette is justified only when the concept set is large enough to need search. It can use a maximum width around 448px, at least 32px viewport clearance, a 48px search row, and a scrollable result list around 288px high. Manage focus, Escape, and focus restoration like a modal dialog.
 
 ## Code and source access
 

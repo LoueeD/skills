@@ -1,5 +1,5 @@
 interface:
   display_name: "Precision Dark UI"
-  short_description: "Build precise dark developer-product interfaces"
+  short_description: "Build authored, precise dark product interfaces"
   brand_color: "#0071FC"
-  default_prompt: "Use $precision-dark-ui to design a polished developer-product interface with a quiet, precise dark-material visual language."
+  default_prompt: "Use $precision-dark-ui to design an authored developer-product interface with a content-specific structure and precise dark-material visual language."

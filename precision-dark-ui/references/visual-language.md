@@ -61,11 +61,15 @@ Use the blue for primary conversion, a meaningful next step, or numbered instruc
 
 ## Typography
 
-Use the project's type system when one exists. Otherwise:
+Use the project's type system when one exists. Otherwise, begin with the platform system stack rather than adding a fashionable web font by reflex:
 
-- interface/body: `Inter`, `SF Pro Text`, or a clean system sans;
+- interface/body: `system-ui`, `SF Pro Text`, or another clean system sans already available;
 - code/technical values: `Roboto Mono`, `SFMono-Regular`, or a system mono;
 - display: a restrained grotesk already licensed by the project, falling back to the sans stack.
+
+Use only weights the selected files or system font actually provide. Prefer a compact weight scale such as 400/500/600. Values such as 580, 620, or 670 are not precision when the font cannot render them distinctly.
+
+Do not use monospaced uppercase labels as a generic shortcut to “technical.” Monospace should indicate code, commands, identifiers, changing values, or real metadata.
 
 Recommended roles:
 
@@ -99,7 +103,8 @@ Think in nested levels:
 
 | Level | Typical range | Examples |
 |---|---:|---|
-| Page section | 88–112px | Major narrative break |
+| Marketing page section | 88–112px | Major narrative break |
+| Operational guide section | 40–56px | Process, example, or reference break |
 | Section heading to content | 28–40px | Heading into grid or FAQ |
 | Grid gap | 18–24px | Cards and framed visuals |
 | Card padding | 24–32px | Editorial cards |
@@ -108,7 +113,7 @@ Think in nested levels:
 | Label to control | 8px | Form field |
 | Inline relation | 4–8px | Icon plus label, metadata |
 
-The outer relationship must feel looser than the inner one. If every gap is 16px, the hierarchy disappears.
+The outer relationship must feel looser than the inner one. If every gap is 16px, the hierarchy disappears. Check cumulative boundaries: parent padding and child padding must not combine into an unintended empty band.
 
 ## Radius hierarchy
 
@@ -149,7 +154,9 @@ Cards should not look like luminous glass. A useful dark card treatment is:
 
 Add a real soft shadow only to dropdowns, popovers, active sliding indicators, or floating tool panels. Elevation communicates layer, not decoration.
 
-For a dark bounded surface, build depth from several quiet layers rather than one dramatic blur:
+Do not apply the complete surface ladder in every viewport. Most compositions should expose only the roles they need; a page, card, stage, panel, and selected pill used together without distinct jobs reads as a component sampler.
+
+For a floating dark surface, build depth from several quiet layers rather than one dramatic blur. An ordinary card normally stops after the first three edge treatments:
 
 1. a faint inset highlight along the top edge;
 2. a low-opacity inset ring around the surface;

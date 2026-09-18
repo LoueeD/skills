@@ -7,7 +7,7 @@ Apply this checklist before declaring the interface complete.
 ### Desktop to tablet
 
 - Reduce a three-column editorial grid to two columns rather than shrinking cards below their useful width.
-- Convert a sticky documentation rail into a horizontal scroll strip around 900px.
+- Convert a sticky documentation rail into a labelled disclosure or sheet around 900px when the destination set is long. Use a horizontal strip only when every item fits or a clear overflow affordance remains visible.
 - Stack playground stage and 244px control rail around 860px.
 - Reflow supporting pricing notes below the billing control when the row becomes crowded.
 - Preserve deliberate image ratios; do not use a single arbitrary height for every viewport.
@@ -19,9 +19,10 @@ Apply this checklist before declaring the interface complete.
 - Reduce large section gaps from 88–112px to 56–64px.
 - Reduce card padding from 32px to 24px and grid gaps to 12–16px.
 - Stack open feature columns with about 40px gaps.
-- Keep primary touch actions at least 44px high.
+- Keep every touch target at least 44×44px, including icon utilities, segmented options, copy controls, and navigation rows.
 - Allow tables and code to scroll within their own region; do not force the whole page wider.
 - Collapse secondary brand text before crowding core navigation.
+- Do not keep both header destination links and a second rail or strip at intermediate widths.
 
 Use logical properties (`padding-inline`, `margin-block`) where practical. Check at intermediate widths, not only a desktop and one phone preset.
 
@@ -104,6 +105,7 @@ Keep selected and hover distinguishable. A selected row may use an 8% white fill
 - Do not communicate status or selection by color alone.
 - Model one-of-many choices as tabs or radio groups, or label and group pressed buttons correctly.
 - Body copy and muted labels meet contrast requirements against their actual surface.
+- Small text below 18px regular or 14px bold reaches at least 4.5:1 contrast against its actual surface.
 - Form labels remain visible; errors are connected to their field and announced appropriately.
 - Dynamic status uses `role="status"` or an appropriate live region without stealing focus.
 - Copy confirmation and comparable transient utility feedback are announced through a polite status region.
@@ -139,3 +141,7 @@ Keep selected and hover distinguishable. A selected row may use an 8% white fill
 - Animated hover or keyboard scanning that makes repeated actions lag behind intent.
 - A theme switch that leaves the root canvas, overscroll edge, or browser chrome in the previous theme.
 - Optional sound enabled by default or used as the sole confirmation.
+- A faux monogram or text-symbol icon standing in for a real identity or icon set.
+- Two navigation systems exposing the same destinations in one viewport.
+- Repeated two-panel or rounded-card silhouettes that make unlike content look interchangeable.
+- Arbitrary font weights that the loaded typeface does not provide.
